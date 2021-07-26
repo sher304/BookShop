@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{%block title%} Book Shop {% endblock %}
+{%load static%}
+{%block content %}
+    <img src="{% static 'img/bookshop.jpg' %}" class="img-fluid" alt="...">
+
+    <div style="margin-top: 30px;" class="container overflow-hidden">
+  <div class="row gy-5">
+      {% for genre in genres %}
+    <div class="col-6">
+      <div class="p-3 border bg-light"><a href="{% url 'book-list' genre.slug%}">{{ genre }}</a></div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
